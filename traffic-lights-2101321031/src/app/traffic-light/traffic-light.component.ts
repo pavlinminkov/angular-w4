@@ -16,5 +16,5 @@ export class TrafficLightComponent {
   @Input()
   public traficLightState: TrafficLightState = TrafficLightState.Red;
 
-  TrafficLightState = TrafficLightState;
+  public TrafficLightState = TrafficLightState;
 }

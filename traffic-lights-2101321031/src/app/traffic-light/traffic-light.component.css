@@ -3,6 +3,7 @@
   border: 2px solid black;
   width: fit-content;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .traffic-light {
@@ -28,4 +29,14 @@
 
 .traffic-light.green {
   background-color: green;
+}
+
+.cross-container {
+  text-align: center;
+}
+
+.cross-btn {
+  width: 5rem;
+  height: 2.5rem;
+  font-size: 1rem;
 }

@@ -15,3 +15,11 @@
     [ngClass]="{ active: traficLightState === TrafficLightState.Green }"
   ></div>
 </div>
+<div class="cross-container">
+  <button
+    class="cross-btn"
+    [disabled]="traficLightState !== TrafficLightState.Green"
+  >
+    Cross
+  </button>
+</div>
