@@ -12,9 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class TrafficLightComponent {
   @Input()
-  public flexDirection: FlexDirection = FlexDirection.Row;
+  public inputFlexDirection: FlexDirection = FlexDirection.Row;
   @Input()
-  public traficLightState: TrafficLightState = TrafficLightState.Red;
+  public inputTraficLightState: TrafficLightState = TrafficLightState.Red;
 
   public TrafficLightState = TrafficLightState;
 }

@@ -1,24 +1,24 @@
 <div
   class="traffic-light-container"
-  [ngStyle]="{ 'flex-direction': flexDirection }"
+  [ngStyle]="{ 'flex-direction': inputFlexDirection }"
 >
   <div
     class="traffic-light red"
-    [ngClass]="{ active: traficLightState === TrafficLightState.Red }"
+    [ngClass]="{ active: inputTraficLightState === TrafficLightState.Red }"
   ></div>
   <div
     class="traffic-light yellow"
-    [ngClass]="{ active: traficLightState === TrafficLightState.Yellow }"
+    [ngClass]="{ active: inputTraficLightState === TrafficLightState.Yellow }"
   ></div>
   <div
     class="traffic-light green"
-    [ngClass]="{ active: traficLightState === TrafficLightState.Green }"
+    [ngClass]="{ active: inputTraficLightState === TrafficLightState.Green }"
   ></div>
 </div>
 <div class="cross-container">
   <button
     class="cross-btn"
-    [disabled]="traficLightState !== TrafficLightState.Green"
+    [disabled]="inputTraficLightState !== TrafficLightState.Green"
   >
     Cross
   </button>

@@ -1,5 +1,21 @@
-<app-traffic-light class="top" [flexDirection]="FlexDirection.Row"></app-traffic-light>
-<app-traffic-light class="bottom" [flexDirection]="FlexDirection.Row"></app-traffic-light>
-<app-traffic-light class="left" [flexDirection]="FlexDirection.Column"></app-traffic-light>
-<app-traffic-light class="right" [flexDirection]="FlexDirection.Column"></app-traffic-light>
-<button class="accident-btn">Accident</button>
+<app-traffic-light
+  class="top"
+  [inputTraficLightState]="trafficLightState"
+  [inputFlexDirection]="FlexDirection.Row"
+></app-traffic-light>
+<app-traffic-light
+  class="bottom"
+  [inputTraficLightState]="trafficLightState"
+  [inputFlexDirection]="FlexDirection.Row"
+></app-traffic-light>
+<app-traffic-light
+  class="left"
+  [inputTraficLightState]="calculateOppositeTrafficLightState()"
+  [inputFlexDirection]="FlexDirection.Column"
+></app-traffic-light>
+<app-traffic-light
+  class="right"
+  [inputTraficLightState]="calculateOppositeTrafficLightState()"
+  [inputFlexDirection]="FlexDirection.Column"
+></app-traffic-light>
+<button class="accident-btn" (click)="handleAccident()">Accident</button>
