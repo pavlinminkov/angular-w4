@@ -18,7 +18,11 @@
 <div class="cross-container">
   <button
     class="cross-btn"
-    [disabled]="inputTraficLightState !== TrafficLightState.Green"
+    (click)="handleCrossButton()"
+    [disabled]="
+      inputTraficLightState === TrafficLightState.Red ||
+      inputTraficLightState === TrafficLightState.Off
+    "
   >
     Cross
   </button>

@@ -2,20 +2,30 @@
   class="top"
   [inputTraficLightState]="trafficLightState"
   [inputFlexDirection]="FlexDirection.Row"
+  (onCross)="handleCross($event)"
 ></app-traffic-light>
 <app-traffic-light
   class="bottom"
   [inputTraficLightState]="trafficLightState"
   [inputFlexDirection]="FlexDirection.Row"
+  (onCross)="handleCross($event)"
 ></app-traffic-light>
 <app-traffic-light
   class="left"
   [inputTraficLightState]="calculateOppositeTrafficLightState()"
   [inputFlexDirection]="FlexDirection.Column"
+  (onCross)="handleCross($event)"
 ></app-traffic-light>
 <app-traffic-light
   class="right"
   [inputTraficLightState]="calculateOppositeTrafficLightState()"
   [inputFlexDirection]="FlexDirection.Column"
+  (onCross)="handleCross($event)"
 ></app-traffic-light>
-<button class="accident-btn" [disabled]="!accidentButtonActive" (click)="handleAccident()">Accident</button>
+<button
+  class="accident-btn"
+  [disabled]="!accidentButtonActive"
+  (click)="handleAccident()"
+>
+  Accident
+</button>

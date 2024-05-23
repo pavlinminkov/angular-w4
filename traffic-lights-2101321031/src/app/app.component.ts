@@ -108,4 +108,10 @@ export class AppComponent implements OnInit {
         return TrafficLightState.Off;
     }
   }
+
+  public handleCross($event: TrafficLightState) {
+    if ($event !== TrafficLightState.Green) {
+      alert('Illegal crossing atempted! Please follow the rules!');
+    }
+  }
 }
