@@ -18,4 +18,4 @@
   [inputTraficLightState]="calculateOppositeTrafficLightState()"
   [inputFlexDirection]="FlexDirection.Column"
 ></app-traffic-light>
-<button class="accident-btn" (click)="handleAccident()">Accident</button>
+<button class="accident-btn" [disabled]="!accidentButtonActive" (click)="handleAccident()">Accident</button>

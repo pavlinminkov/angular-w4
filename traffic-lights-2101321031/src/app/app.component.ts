@@ -4,11 +4,12 @@ import { TrafficLightComponent } from './traffic-light/traffic-light.component';
 import { FlexDirection } from './shared/enums/flex-direction.enum';
 import { TrafficLightState } from './shared/enums/traffic-light-state.enum';
 import { TrafficLightDelay } from './shared/enums/traffic-light-delay.enum';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TrafficLightComponent],
+  imports: [RouterOutlet, TrafficLightComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -16,6 +17,7 @@ export class AppComponent implements OnInit {
   FlexDirection = FlexDirection;
   public trafficLightState: TrafficLightState = TrafficLightState.Green;
   public accidentInProgress: boolean = false;
+  public accidentButtonActive: boolean = true;
 
   ngOnInit() {
     this.startTrafficCycle();
@@ -30,7 +32,7 @@ export class AppComponent implements OnInit {
     if (this.accidentInProgress) {
       return;
     }
-    
+
     const previousState = this.trafficLightState;
     this.trafficLightState = TrafficLightState.Yellow;
 
@@ -71,6 +73,8 @@ export class AppComponent implements OnInit {
 
   public handleAccident(): void {
     this.accidentInProgress = true;
+    this.disableAccidentButton();
+
     this.trafficLightState = TrafficLightState.Yellow;
     setTimeout(() => {
       clearInterval(flashingInterval);
@@ -85,6 +89,11 @@ export class AppComponent implements OnInit {
         this.trafficLightState = TrafficLightState.Off;
       }
     }, TrafficLightDelay.Flashing);
+  }
+
+  public disableAccidentButton(): void {
+    this.accidentButtonActive = false;
+    setTimeout(() => (this.accidentButtonActive = true), 20000);
   }
 
   public calculateOppositeTrafficLightState(): TrafficLightState {
