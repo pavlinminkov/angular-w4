@@ -1,0 +1,31 @@
+.traffic-light-container {
+  display: flex;
+  border: 2px solid black;
+  width: fit-content;
+  flex-direction: column;
+}
+
+.traffic-light {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.5rem 0.5rem;
+  opacity: 0.3;
+}
+
+.traffic-light.active {
+  opacity: 1;
+}
+
+.traffic-light.red {
+  background-color: red;
+}
+
+.traffic-light.yellow {
+  background-color: yellow;
+}
+
+.traffic-light.green {
+  background-color: green;
+}

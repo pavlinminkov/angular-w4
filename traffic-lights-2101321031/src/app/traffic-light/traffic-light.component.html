@@ -1,0 +1,17 @@
+<div
+  class="traffic-light-container"
+  [ngStyle]="{ 'flex-direction': flexDirection }"
+>
+  <div
+    class="traffic-light red"
+    [ngClass]="{ active: traficLightState === TrafficLightState.Red }"
+  ></div>
+  <div
+    class="traffic-light yellow"
+    [ngClass]="{ active: traficLightState === TrafficLightState.Yellow }"
+  ></div>
+  <div
+    class="traffic-light green"
+    [ngClass]="{ active: traficLightState === TrafficLightState.Green }"
+  ></div>
+</div>
